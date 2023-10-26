@@ -14,13 +14,14 @@ Servies used in the project:
 - AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, you can centrally manage permissions that control which AWS resources users can access.
 
   ## Step 1: Hosting web app using AWS Amplify
-  1. Go to AWS Amplify in the console
-  2. Choose 'host your web app' option
-  3. Choose appropriate option to upload your code. I'm going with 'deploy without git provider'
-  4. Provide an app name and env name, then upload the code (only zip folder is accepltable). Then save and deploy. For any updates to the web app, you can keep on uploading the updated code.
-  5. You will get a domain where the app is deployed.
+  - Go to AWS Amplify in the console
+  - Choose 'host your web app' option
+  - Choose appropriate option to upload your code. I'm going with 'deploy without git provider'
+  - Provide an app name and env name, then upload the code (only zip folder is accepltable). Then save and deploy. For any updates to the web app, you can keep on uploading the updated code.
+  - You will get a domain where the app is deployed.
  
   Below given is my sample web app and the workflow.
+  
   ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/0cd8637c-49b3-4e87-9e1d-cadef59cb5c3)
   ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/7b9a49ca-1449-414d-a436-e963100b2b0d)
   ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/824ea72e-911b-488b-b8a6-1181fc7055e5)
