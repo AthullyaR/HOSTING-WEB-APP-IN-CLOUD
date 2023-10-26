@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORLD OF NUMBERS</title>
+    <style>
+        body{
+            margin-top: 3rem;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(27, 26, 26);
+            color: #16e161;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 6rem;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        var callAPI=(base)=>{
+            var header= new Headers();
+            header.append("Content-Type","application/json");
+            var val=JSON.stringify({"base":base});
+            var request={
+                method:'POST',
+                headers:header,
+                body:val,
+                redirect:'follow'
+
+            };
+
+            fetch("https://gisru2gl0l.execute-api.ap-south-1.amazonaws.com/stage2",request)
+            .then(response =>response.text())
+            .then(result=>alert(JSON.parse(result).body))
+            .catch(error=>console.log('error',error));
+        }
+    </script>
+</head>
+<body>
+    <h1>FUN WITH NUMBERS !!!</h1>
+    <form>
+        <label>Enter number:</label>
+        <input type="text" id="base">
+        <label>Square of the number :</label>
+        <button type="button" onclick="callAPI(document.getElementById('base').value)">SQUARE</button>
+    </form>
+
+</body>
+</html>
