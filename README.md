@@ -15,6 +15,8 @@ Servies used in the project:
 
   ## Description
   **FUN WITH NUMBERS** is the basic web app written in HTML. User will provide the number whose square is to be given as the output. AWS Lambda is used to implement the math functionality.
+  When user enters the number and click the button 'square', we need to find the square of the number. Inorder to do the computation, we need to trigger the Lambda function using an API 
+  generated using AWS API Gateway. The result of the computation will be stored in the AWS Dynamodb. AWS IAM is used to assign required permission for doing operations on the table.
 
   ## Step 1: Hosting web app using AWS Amplify
   - Go to AWS Amplify in the console.
@@ -45,6 +47,62 @@ Servies used in the project:
     ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/c61f7e3d-943d-43ec-ab2f-c0366e02d1e9)
     ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/e2bc1f9a-6f2b-40a9-9eff-69604a9a89b2)
     ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/90215bbc-4b2c-4de7-9c86-00d9dd3d1dbe)
+
+    ## Step 3: Using AWS API Gateway to invoke the math functionality
+    - Go to AWS API Gateway in the console.
+    - Choose REST API and click build.
+    - Select 'new API', give API name and create API.
+    - From the sidebar, select resources and generate method.
+    - Give the method type (GET,POST...), integration type (AWS Lambda), lambda function name and create method.
+    - Deploy the API and test it.
+    - API will be visible in the stages section.
+   
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/d8cfe3d8-3875-4cb4-bc15-5bf62b6ab461)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/a1f6ee44-2350-48e6-9203-116ced2cf235)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/13883bbb-914a-4c54-9d9a-7868de687e40)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/6177e531-58fe-482d-8936-44a07f483f04)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/ae0c7d61-e08a-440c-bd5e-681e6b7ecc84)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/8b2cb4bf-821b-4e29-9c51-c200e6bc6d78)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/68f840a8-62d6-4be5-ade9-402b3e0a4de6)
+      ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/52dd05f9-bace-443e-aea1-37767dbd1056)
+
+      ## Step 4: Incorporating database AWS Dynamodb and giving permissions using AWS IAM
+      - Go to AWS Dynamodb in the console.
+      - Create table by entering table name and partion key (ID), we will get the database ARN.
+      - Now assign permissions to perform operations on database, to the role that was automatically generally while using AWS Lambda.
+      - Go to AWS Lambda, move to permission and click the role specified and add permissions.
+      - Review permissions and create it.
+      - Now update the lambda function, inorder to store the result in the table created.
+      - Deploy the changes and test the function.
+      - Result of the computation will get stored in the database.
+      - Go to explore items under the tables section in Dynamodb to find the result of computation.
+     
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/3853587b-fee9-48e9-9428-5f807dde01ec)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/51988a0c-7280-43ae-b0f2-f02d93b68996)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/967ef418-f14e-4fdd-8b74-e92c89dfff08)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/1c281ab2-7ea4-4781-a67a-3c987a3a77d4)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/8e216254-8ebb-4147-821b-bba39f3cbbdb)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/b9cb1fe2-de4a-4ac3-bd82-876350b2cbde)
+        ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/c9385afa-e0d6-437f-9632-7e49cf03bf7f)
+     
+        ## Final Step
+        - Use the API generated, in the HTML code to invoke the math function when button 'square' is clicked.
+
+          ![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/7544c243-3b73-4f32-8d8b-5907c349faa8)
+
+       
+      
+     
+      
+        
+
+
+
+
+
+
+
+
 
 
 
