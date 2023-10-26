@@ -1,7 +1,7 @@
 # HOSTING-WEB-APP-IN-CLOUD
 
 ## Overview
-Servies used in the project:
+Servies used in the project
     - AWS Amplify
     - AWS Lambda
     - AWS API Gateway
