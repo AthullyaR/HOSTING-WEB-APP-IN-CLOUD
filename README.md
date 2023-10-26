@@ -2,11 +2,8 @@
 
 ## Overview
 Servies used in the project: 
-- AWS Amplify
-- AWS Lambda
-- AWS API Gateway
-- AWS Dynamodb
-- AWS IAM
+![image](https://github.com/AthullyaR/HOSTING-WEB-APP-IN-CLOUD/assets/78737460/ec90bb5e-0ac7-422b-a147-598b965f2cc4)
+
 
 - AWS Amplify enables frontend web and mobile developers to quickly and easily build full-stack applications on AWS. Amplify provides two services: Amplify Hosting and Amplify Studio.
 - AWS Lambda is a compute service that lets you run code without provisioning or managing servers. Lambda runs code on a high-availability compute infrastructure and performs all of the administration of the compute resources, including      server and operating system maintenance, capacity provisioning and automatic scaling, and logging. With Lambda, we only need to do supply your code in one of the language runtimes that Lambda supports.
